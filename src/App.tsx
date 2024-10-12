@@ -1,14 +1,17 @@
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <FontAwesomeIcon icon={faClock} className="bg-secondary" />
-    </>
+    <div className="container mx-auto px-5 py-8">
+      <Router>
+        <Header />
+        <Routes>
+          <Route index path="/" element="" />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
-export default App
+export default App;
