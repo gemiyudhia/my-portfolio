@@ -5,3 +5,7 @@
 body {
   @apply font-poppins;
 }
+
+.hamburger-line {
+  @apply w-[30px] h-[4px] bg-white rounded-xl;
+}
