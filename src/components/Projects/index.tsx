@@ -4,7 +4,7 @@ const Projects = () => {
       <h1 className="text-3xl text-secondary uppercase text-center font-black mb-9">
         my project
       </h1>
-      <div className="grid grid-cols-4 lg:grid-cols-5 grid-rows-6 gap-4">
+      <div className="grid grid-cols-4 lg:grid-cols-5 grid-rows-4 gap-4">
         {/* Gambar pertama */}
         <img
           src=""
