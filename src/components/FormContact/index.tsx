@@ -11,9 +11,14 @@ const FormContact = () => {
 
     if (form.current) {
       emailjs
-        .sendForm("service_m37wt6p", "template_ia9xrtm", form.current, {
-          publicKey: "Mhkt8jzMefHLML8_7",
-        })
+        .sendForm(
+          `${import.meta.env.VITE_REACT_SERVICE}`,
+          `${import.meta.env.VITE_REACT_TEMPLATE}`,
+          form.current,
+          {
+            publicKey: `${import.meta.env.VITE_REACT_API}`,
+          }
+        )
         .then(
           () => {
             console.log("SUCCESS!");
