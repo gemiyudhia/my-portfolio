@@ -1,6 +1,7 @@
 import { FaProjectDiagram } from "react-icons/fa";
 import CardPhoto from "../elements/CardPhoto";
 import SosialMediaTablet from "../elements/SosialMediaTablet";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
@@ -10,9 +11,13 @@ const HeroSection = () => {
           <h1 className="text-4xl lg:text-5xl font-black text-secondary">
             I'm <span className="text-primary">Gemi Yudhia,</span>👋
           </h1>
-          <h1 className="text-4xl lg:text-5xl font-black text-secondary">
-            Frontend Developer
-          </h1>
+          <TypeAnimation
+            sequence={["Frontend Developer", 1000, "", 2000]}
+            wrapper="span"
+            speed={50}
+            className="text-4xl lg:text-5xl font-black text-secondary"
+            repeat={Infinity}
+          />
           <p className="text-xl font-semibold my-8 text-secondary max-w-xl">
             Passionate frontend developer with a focus on creating interactive
             and visually engaging user experiences.
