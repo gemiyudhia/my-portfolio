@@ -13,9 +13,7 @@ const Header = () => {
 
   const handleMenuClick = (
     menu: string,
-    event: React.MouseEvent<HTMLAnchorElement>
   ) => {
-    event.preventDefault();
     setActiveMenu(menu);
   };
 

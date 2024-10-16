@@ -12,7 +12,7 @@ const MenuDesktop = ({ activeMenu, handleMenuClick }: MenuDesktopProps) => {
       <ul className="flex items-center md:gap-x-4 lg:gap-x-32 lg:text-xl">
         <li>
           <a
-            href="/"
+            href="#home"
             className={`hover:text-gray-300 lg:py-5 lg:px-8 md:py-4 md:px-5 rounded-full transition-all duration-300 ease-in-out ${
               activeMenu === "home"
                 ? " hover:text-secondary text-secondary bg-white"
@@ -25,7 +25,7 @@ const MenuDesktop = ({ activeMenu, handleMenuClick }: MenuDesktopProps) => {
         </li>
         <li>
           <a
-            href="/"
+            href="#about"
             className={`hover:text-gray-300 lg:py-5 lg:px-8 md:py-4 md:px-5 rounded-full transition-all duration-300 ease-in-out ${
               activeMenu === "about"
                 ? "hover:text-secondary text-secondary bg-white"
@@ -46,7 +46,7 @@ const MenuDesktop = ({ activeMenu, handleMenuClick }: MenuDesktopProps) => {
 
         <li>
           <a
-            href="/"
+            href="#project"
             className={`hover:text-gray-300 lg:py-5 lg:px-8 md:py-4 md:px-5 rounded-full transition-all duration-300 ease-in-out ${
               activeMenu === "myworks"
                 ? "hover:text-secondary text-secondary bg-white"
@@ -54,12 +54,12 @@ const MenuDesktop = ({ activeMenu, handleMenuClick }: MenuDesktopProps) => {
             }`}
             onClick={(event) => handleMenuClick("myworks", event)}
           >
-            My Works
+            Project
           </a>
         </li>
         <li>
           <a
-            href="/"
+            href="#contact"
             className={`hover:text-gray-300 lg:py-5 lg:px-8 md:py-4 md:px-5 rounded-full transition-all duration-300 ease-in-out ${
               activeMenu === "contact"
                 ? "hover:text-secondary text-secondary bg-white"

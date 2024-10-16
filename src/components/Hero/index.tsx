@@ -18,13 +18,16 @@ const HeroSection = () => {
             appealing websites that are both engaging and functional, with a
             focus on delivering a great user experience.
           </p>
-          <button className="flex items-center gap-x-3 bg-secondary text-lg text-white lg:py-5 lg:px-8 md:py-3 md:px-5 py-5 px-8 rounded-xl font-semibold hover:bg-[#212134]">
+          <a
+            href="#project"
+            className="flex items-center gap-x-3 bg-secondary text-lg text-white lg:py-5 lg:px-8 md:py-3 md:px-5 py-5 px-8 rounded-xl font-semibold hover:bg-[#212134]"
+          >
             <FaProjectDiagram />
             My Works
-          </button>
+          </a>
 
           {/* social media tablet */}
-         <SosialMediaTablet />
+          <SosialMediaTablet />
         </div>
 
         {/* Card Photo */}
