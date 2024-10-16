@@ -26,7 +26,7 @@ const FormContact = () => {
   };
 
   return (
-    <div className="mt-28">
+    <div className="pt-28">
       <h1 className="flex items-center text-3xl text-secondary font-bold mb-8">
         Write me a Message <MdMessage className="ml-2 text-primary" />
       </h1>

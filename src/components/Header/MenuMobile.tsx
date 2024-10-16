@@ -13,7 +13,7 @@ const MenuMobile = ({isOpen}: MenuMobileProps) => {
     >
       <ul className="block bg-primary mt-5 py-7 px-4 text-white text-lg font-semibold rounded-xl space-y-4">
         <li>
-          <a href="#home">Home</a>
+          <a href="#">Home</a>
         </li>
         <li>
           <a href="#about">About</a>

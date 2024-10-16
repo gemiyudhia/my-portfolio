@@ -4,7 +4,7 @@ import SosialMediaTablet from "../elements/SosialMediaTablet";
 
 const HeroSection = () => {
   return (
-    <section className="mt-20 mb-8 px-3">
+    <section className=" px-3 md:pt-28">
       <div className="md:flex md:items-center md:justify-between md:gap-x-20">
         <div>
           <h1 className="text-4xl lg:text-5xl font-black text-secondary">
@@ -20,7 +20,7 @@ const HeroSection = () => {
           </p>
           <a
             href="#project"
-            className="flex items-center gap-x-3 bg-secondary text-lg text-white lg:py-5 lg:px-8 md:py-3 md:px-5 py-5 px-8 rounded-xl font-semibold hover:bg-[#212134]"
+            className="flex items-center gap-x-3 bg-secondary text-lg text-white lg:py-5 lg:px-8 md:py-3 md:px-5 py-5 px-8 rounded-xl font-semibold hover:bg-[#212134] w-1/2"
           >
             <FaProjectDiagram />
             My Works
