@@ -1,6 +1,6 @@
 const Projects = () => {
   return (
-    <section className="pt-28">
+    <section className="md:pt-28 pt-[100px]">
       <h1 className="text-3xl text-secondary uppercase text-center font-black mb-9">
         my project
       </h1>

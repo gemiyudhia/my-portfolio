@@ -3,7 +3,7 @@ import { FiGithub } from "react-icons/fi";
 
 const About = () => {
   return (
-    <section className="pt-28">
+    <section className="md:pt-28 pt-[100px]">
       <div className="flex flex-wrap">
         <div className="w-full px-4 mb-10 md:w-1/2">
           <h4 className="font-bold uppercase text-primary text-3xl mb-3">

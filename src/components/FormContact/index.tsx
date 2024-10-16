@@ -26,7 +26,7 @@ const FormContact = () => {
   };
 
   return (
-    <div className="pt-28">
+    <div className="md:pt-28 pt-[100px]">
       <h1 className="flex items-center text-3xl text-secondary font-bold mb-8">
         Write me a Message <MdMessage className="ml-2 text-primary" />
       </h1>
@@ -66,7 +66,11 @@ const FormContact = () => {
           />
         </form>
         <div>
-          <img src={send} alt="send image" className="hidden lg:flex w-96 h-96 ml-56" />
+          <img
+            src={send}
+            alt="send image"
+            className="hidden lg:flex w-96 h-96 ml-56"
+          />
         </div>
       </div>
     </div>
