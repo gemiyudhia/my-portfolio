@@ -8,22 +8,24 @@ import Projects from "./components/Projects";
 function App() {
   return (
     <>
-      <div className="container mx-auto px-5 py-8">
-        <Header />
-        <section id="home">
-          <HeroSection />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="project">
-          <Projects />
-        </section>
-        <section id="contact">
-          <FormContact />
-        </section>
+      <div className="scrollbar overflow-y-scroll h-screen">
+        <div className="container mx-auto px-5 py-8">
+          <Header />
+          <section id="home">
+            <HeroSection />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="project">
+            <Projects />
+          </section>
+          <section id="contact">
+            <FormContact />
+          </section>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

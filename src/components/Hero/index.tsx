@@ -14,9 +14,8 @@ const HeroSection = () => {
             Frontend Developer
           </h1>
           <p className="text-xl font-semibold my-8 text-secondary max-w-xl">
-            I enjoy turning imagination into reality by creating visually
-            appealing websites that are both engaging and functional, with a
-            focus on delivering a great user experience.
+            Passionate frontend developer with a focus on creating interactive
+            and visually engaging user experiences.
           </p>
           <a
             href="#project"
