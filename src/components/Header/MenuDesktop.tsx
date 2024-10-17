@@ -48,11 +48,11 @@ const MenuDesktop = ({ activeMenu, handleMenuClick }: MenuDesktopProps) => {
           <a
             href="#project"
             className={`hover:text-gray-300 lg:py-5 lg:px-8 md:py-4 md:px-5 rounded-full transition-all duration-300 ease-in-out ${
-              activeMenu === "myworks"
+              activeMenu === "project"
                 ? "hover:text-secondary text-secondary bg-white"
                 : ""
             }`}
-            onClick={(event) => handleMenuClick("myworks", event)}
+            onClick={(event) => handleMenuClick("project", event)}
           >
             Project
           </a>

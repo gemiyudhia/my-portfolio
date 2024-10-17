@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HamburgerMenu from "../elements/HamburgerMenu";
 import MenuMobile from "./MenuMobile";
 import MenuDesktop from "./MenuDesktop";
@@ -16,6 +16,10 @@ const Header = () => {
 
   const handleMenuClick = (menu: string) => {
     setActiveMenu(menu);
+    const section = document.getElementById(menu);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useGSAP(() => {
@@ -24,6 +28,35 @@ const Header = () => {
       { opacity: 0, y: -100 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
     );
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section"); // Ambil semua section
+    const options = {
+      threshold: 0.5, // Nilai 0.5 berarti setidaknya 50% dari section harus terlihat
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          if (id) {
+            setActiveMenu(id);
+          }
+        }
+      });
+    }, options);
+
+    // Amati setiap section
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
   }, []);
 
   return (
