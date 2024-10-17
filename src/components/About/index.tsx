@@ -1,9 +1,37 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Tambahkan ini
+import { useRef } from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 
+gsap.registerPlugin(ScrollTrigger); // Daftarkan plugin ScrollTrigger
+
 const About = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      aboutRef.current,
+      { opacity: 0, y: 50 }, // Mulai tersembunyi
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          scroller: ".scrollbar", // Pastikan GSAP mendeteksi elemen scroll yang benar
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="md:pt-28 pt-[100px]">
+    <section ref={aboutRef} className="md:pt-28 pt-[100px]">
       <div className="flex flex-wrap">
         <div className="w-full px-4 mb-10 md:w-1/2">
           <h4 className="font-bold uppercase text-primary text-3xl mb-3">

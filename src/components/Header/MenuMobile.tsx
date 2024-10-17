@@ -1,8 +1,9 @@
 type MenuMobileProps = {
   isOpen: boolean;
-}
+  setIsOpen: (value: boolean) => void;
+};
 
-const MenuMobile = ({isOpen}: MenuMobileProps) => {
+const MenuMobile = ({ isOpen, setIsOpen }: MenuMobileProps) => {
   return (
     <div
       className={`absolute bg-secondary-0 w-[93%] right-5 top-14 py-4 px-3 rounded-lg transition-all duration-300 ease-in-out transform md:hidden ${
@@ -13,20 +14,28 @@ const MenuMobile = ({isOpen}: MenuMobileProps) => {
     >
       <ul className="block bg-primary mt-5 py-7 px-4 text-white text-lg font-semibold rounded-xl space-y-4">
         <li>
-          <a href="#home">Home</a>
+          <a onClick={() => setIsOpen(false)} href="#home">
+            Home
+          </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a onClick={() => setIsOpen(false)} href="#about">
+            About
+          </a>
         </li>
         <li>
-          <a href="#project">Projects</a>
+          <a onClick={() => setIsOpen(false)} href="#project">
+            Projects
+          </a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a onClick={() => setIsOpen(false)} href="#contact">
+            Contact
+          </a>
         </li>
       </ul>
     </div>
   );
-}
+};
 
-export default MenuMobile
+export default MenuMobile;

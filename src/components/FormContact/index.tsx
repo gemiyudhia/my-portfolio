@@ -2,9 +2,35 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { MdMessage } from "react-icons/md";
 import send from "../../assets/send.png";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger); // Daftarkan plugin ScrollTrigger
 
 const FormContact = () => {
   const form = useRef<HTMLFormElement | null>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contactRef.current,
+      { opacity: 0, y: 50 }, // Mulai tersembunyi
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          scroller: ".scrollbar",
+        },
+      }
+    );
+  }, []);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +57,7 @@ const FormContact = () => {
   };
 
   return (
-    <div className="md:pt-28 pt-[100px]">
+    <div ref={contactRef} className="md:pt-28 pt-[100px]">
       <h1 className="flex items-center text-3xl text-secondary font-bold mb-8">
         Write me a Message <MdMessage className="ml-2 text-primary" />
       </h1>

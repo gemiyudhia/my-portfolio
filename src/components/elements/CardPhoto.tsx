@@ -1,15 +1,41 @@
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const CardPhoto = () => {
+  const cardRef = useRef<HTMLInputElement>(null);
+  const sosialRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      cardRef.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
+    );
+
+    gsap.fromTo(
+      sosialRef.current,
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+    );
+  }, []);
+
   return (
     <div className="mt-12 md:mb-20 lg:flex lg:items-center">
-      <div className="bg-primary rounded-3xl w-full md:w-[300px] h-[400px] overflow-hidden">
+      <div
+        ref={cardRef}
+        className="bg-primary rounded-3xl w-full md:w-[300px] h-[400px] overflow-hidden"
+      >
         <img src="" alt="foto" className="object-cover w-full h-full" />
       </div>
 
       {/* Social Media */}
-      <div className="lg:flex hidden justify-center items-center">
+      <div
+        ref={sosialRef}
+        className="lg:flex hidden justify-center items-center"
+      >
         <div className="rotate-90 flex items-center">
           <h3 className="text-lg font-semibold w-32 text-primary">
             Follow me on:
@@ -42,6 +68,6 @@ const CardPhoto = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CardPhoto
+export default CardPhoto;
