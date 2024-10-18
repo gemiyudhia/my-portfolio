@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MdMessage } from "react-icons/md";
 import send from "../../assets/send.png";
@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger); // Daftarkan plugin ScrollTrigger
 const FormContact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -47,7 +48,8 @@ const FormContact = () => {
         )
         .then(
           () => {
-            console.log("SUCCESS!");
+            setIsSuccess(true);
+            setTimeout(() => setIsSuccess(false), 5000);
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -104,6 +106,12 @@ const FormContact = () => {
           />
         </div>
       </div>
+
+      {isSuccess && (
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 mt-5 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg">
+          Your message was sent successfully!
+        </div>
+      )}
     </div>
   );
 };
